@@ -1,0 +1,110 @@
+header {
+  background-color: $black;
+  color: $white;
+  position: fixed;
+  width: 100vw;
+  font-size: 50px;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 5px 10px rgba($color: $black, $alpha: 0.3);
+  border-bottom: 1px solid $grey-text;
+}
+
+.nav-logo {
+  width: 33%;
+  font-weight: 500;
+}
+
+nav {
+  display: flex;
+  width: 66%;
+  justify-content: space-between;
+  // border: 1px solid $white;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  font-size: 20px;
+  li {
+    position: relative;
+    a {
+      color: $white;
+      padding: 10px;
+      position: relative;
+    }
+  }
+}
+
+.is-current {
+  &::after {
+    content: "";
+    width: 40%;
+    height: 3px;
+    position: absolute;
+    background-color: $primary;
+    bottom: -5px;
+    left: 30%;
+    border-radius: 10000px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    position: fixed;
+  }
+
+  .nav-logo {
+    z-index: 999;
+  }
+
+  .hamburger {
+    position: absolute;
+    cursor: pointer;
+    right: 3rem;
+    top: 50%;
+    transform: translate(0, -50%);
+    z-index: 100;
+  }
+
+  .line {
+    width: 30px;
+    height: 3px;
+    background-color: $white;
+    margin: 5px;
+  }
+
+  nav {
+    // z-index: 99;
+    width: 100vw;
+    height: 100vh;
+    background-color: $black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    pointer-events: none;
+    clip-path: circle(100px at 90% -10%);
+    -webkit-clip-path: circle(100px at 90% -10%);
+    transition: all 1s ease-out;
+  }
+  .nav-links {
+    z-index: 99;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 80%;
+  }
+  .open {
+    clip-path: circle(1500px at 90% -10%);
+    -webkit-clip-path: circle(1500px at 90% -10%);
+    pointer-events: all;
+  }
+}

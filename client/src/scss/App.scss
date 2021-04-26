@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,700;1,300&display=swap');
+@import './variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+
+html {
+  scroll-padding-top: 10vh;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+  .social-links {
+    padding: 10px;
+    transform: translateY(-7px);
+  }
+  i {
+    color: white;
+    font-size: 1.7rem;
+  }
+}
+
+section {
+  min-height: 90vh;
+}
+
+.btn {
+  color: $primary-text;
+  padding: 10px 20px;
+  margin: 20px auto;
+  display: block;
+  border: 1px solid $primary;
+  width: fit-content;
+  border-radius: 25px;
+  transition: all 0.5s ease-out;
+
+  &:hover {
+    background-color: $primary-text;
+    color: white;
+  }
+}
+
+@import './header';
+@import './home';
+@import './about';
+@import './projects';
+@import './contact';
+@import './footer';

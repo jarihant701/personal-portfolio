@@ -1,0 +1,108 @@
+.contact {
+  background-color: $black;
+  color: $white;
+  text-align: center;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &_title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  &_para {
+    color: $grey-text;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+  form {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 20px;
+    div {
+      margin: 10px 0;
+      color: $grey-text;
+    }
+    input,
+    textarea {
+      padding: 5px 10px;
+      width: 100%;
+      border-radius: 5px;
+      outline: none;
+      // border: none;
+      margin-top: 5px;
+      background-color: $grey-bg;
+    }
+    textarea {
+      resize: vertical;
+    }
+    #submit {
+      background-color: transparent;
+      border: 1px solid $white;
+      font-size: 1rem;
+      color: $white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s linear;
+      &:hover {
+        background-color: $white;
+        color: $black;
+      }
+    }
+  }
+}
+
+.contact-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .contact-links {
+    padding: 10px;
+  }
+  i {
+    color: white;
+    font-size: 1.7rem;
+  }
+}
+
+.error{ 
+  border: 3px solid #c00;
+}
+
+.success {
+  color: $primary-text;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#captcha {
+  display: none;
+}
+
+@media screen and (min-width: 800px) {
+  .contact {
+    font-size: 20px;
+    &_title {
+      font-size: 3.5rem;
+    }
+    form {
+      width: 40%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+      div {
+        margin: 0;
+      }
+      .textarea {
+        grid-column: 1/ span 2;
+      }
+      #submit {
+        grid-column: 1/ span 2;
+      }
+    }
+  }
+}

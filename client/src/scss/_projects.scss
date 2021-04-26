@@ -1,0 +1,142 @@
+.projects {
+  font-size: 18px;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &_title {
+    color: $primary-text;
+    font-size: 2.7rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
+
+.project {
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+  border: 1px solid $primary;
+  padding: 20px;
+  border-radius: 20px;
+  .ss_div {
+    // max-width: 500px;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    // border: 1px solid red;
+    margin-bottom: 10px;
+    img {
+      width: 100%;
+      animation-name: scroll;
+      animation-duration: 100s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+  }
+  h3 {
+    font-size: 1.5rem;
+    margin: 0.3rem 0;
+    color: $primary-text;
+  }
+  a {
+    color: $black;
+    text-decoration: underline;
+    // font-size: 0.7em;
+  }
+  p {
+    margin: 0.3rem 0;
+    font-size: 1em;
+  }
+  .stack {
+    font-weight: 200;
+    font-size: 0.7em;
+    color: $primary;
+  }
+}
+
+.fadeIn {
+  opacity: 0;
+  animation: fade;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    margin-top: 0%;
+  }
+  100% {
+    margin-top: -100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .projects {
+    margin: 1rem;
+  }
+  .project {
+    flex-direction: row;
+    margin-top: 2rem;
+    font-size: 20px;
+    .ss_div {
+      // max-width: 500px;
+      width: 100%;
+      // border: 1px solid red;
+      height: 300px;
+      overflow: hidden;
+      // border: 1px solid red;
+      margin: 0 3rem;
+      img {
+        width: 100%;
+        animation: scroll 15s infinite alternate;
+      }
+    }
+    .details_div {
+      height: 300px;
+      // border: 1px solid red;
+      padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+    .details_div:nth-child(even) {
+      order: 1;
+    }
+    h3 {
+      font-size: 2rem;
+      margin: 0.3rem 0;
+      color: $primary-text;
+    }
+    a {
+      color: $black;
+      text-decoration: underline;
+      // font-size: 0.7em;
+    }
+    p {
+      margin: 0.3rem 0;
+      font-size: 1em;
+    }
+    .stack {
+      font-weight: 200;
+      font-size: 0.7em;
+      color: $primary;
+    }
+  }
+  .project:nth-child(even) .details_div {
+    order: 1;
+  }
+  .project:nth-child(even) .ss_div {
+    order: 2;
+  }
+}

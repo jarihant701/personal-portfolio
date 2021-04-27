@@ -1,13 +1,18 @@
 import React from "react";
-import ScrollAnimation from 'react-animate-on-scroll';
-import Portfolio from "../Assets/Portfolio.png";
-import Pokedex from "../Assets/Pokedex React.png";
-import Weather from "../Assets/Weather Forecast.png";
-import RPS from "../Assets/Rock Paper Sciss.png";
+import ScrollAnimation from "react-animate-on-scroll";
+import Portfolio from "../Assets/Portfolio-min.png";
+import PortfolioWEBP from "../Assets/Portfolio.webp";
+import Pokedex from "../Assets/Pokedex_React-min.png";
+import PokedexWEBP from "../Assets/Pokedex_React.webp";
+import Weather from "../Assets/Weather_Forecast-min.png";
+import WeatherWEBP from "../Assets/Weather_Forecast.webp";
+import RPS from "../Assets/Rock_Paper_Sciss-min.png";
+import RPSWEBP from "../Assets/Rock_Paper_Sciss.webp";
 
 const Projects = () => {
   const projects = [
     {
+      imageWeb: PortfolioWEBP,
       image: Portfolio,
       name: "Personal Website",
       github: "https://github.com/jarihant701/pokedex-react",
@@ -17,6 +22,7 @@ const Projects = () => {
       stack: "REACTJS | NODEJS | EXPRESS | NODEMAILER",
     },
     {
+      imageWeb: PokedexWEBP,
       image: Pokedex,
       name: "Pokedex",
       github: "https://github.com/jarihant701/pokedex-react",
@@ -26,6 +32,7 @@ const Projects = () => {
       stack: "REACTJS | POKEAPI | REACT ROUTER",
     },
     {
+      imageWeb: WeatherWEBP,
       image: Weather,
       name: "Weather Forcasting",
       github: "https://github.com/jarihant701/Weather-Forecast",
@@ -35,6 +42,7 @@ const Projects = () => {
       stack: "JAVASCRIPT | OPENWEATHER | GEOLOCATION | CHARTJS",
     },
     {
+      imageWeb: RPSWEBP,
       image: RPS,
       name: "Rock Paper Scissors",
       github: "https://github.com/jarihant701/rock-paper-scissor",
@@ -50,10 +58,13 @@ const Projects = () => {
       <h2 className="projects_title">&#60; Projects /&#62;</h2>
       {projects.map((project, index) => {
         return (
-          <ScrollAnimation animateIn="fadeIn" className="project">
-          {/* <div  key={index}> */}
+          <ScrollAnimation animateIn="fadeIn" className="project" key={index}>
             <div className="ss_div">
-              <img src={project.image} alt="Project SS" />
+              <picture>
+                <source srcSet={project.imageWeb} type="image/webp" />
+                <source srcSet={project.image} type="image/jpeg" />
+                <img src={project.image} alt="Project Screenshot" />
+              </picture>
             </div>
             <div className="details_div">
               <h3>{project.name}</h3>
@@ -79,12 +90,17 @@ const Projects = () => {
               <p>{project.description}</p>
               <p className="stack">{project.stack}</p>
             </div>
-          {/* </div> */}
+            {/* </div> */}
           </ScrollAnimation>
         );
       })}
-      <a href="https://www.github.com/jarihant701" target="_blank" rel="noreferrer" className="btn">
-          See More on Github
+      <a
+        href="https://www.github.com/jarihant701"
+        target="_blank"
+        rel="noreferrer"
+        className="btn"
+      >
+        See More on Github
       </a>
     </section>
   );

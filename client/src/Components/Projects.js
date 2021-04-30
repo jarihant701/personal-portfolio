@@ -1,5 +1,4 @@
 import React from "react";
-import ScrollAnimation from "react-animate-on-scroll";
 import Portfolio from "../Assets/Portfolio-min.png";
 import PortfolioWEBP from "../Assets/Portfolio.webp";
 import Pokedex from "../Assets/Pokedex_React-min.png";
@@ -15,8 +14,8 @@ const Projects = () => {
       imageWeb: PortfolioWEBP,
       image: Portfolio,
       name: "Personal Website",
-      github: "https://github.com/jarihant701/pokedex-react",
-      live: "https://jarihant701.github.io/pokedex-react/#/",
+      github: "https://github.com/jarihant701/personal-portfolio",
+      live: "www.arihantjain.tech",
       description:
         "Full Stack Node and React App to use as a Personal Portfolio. Used ReactJS to create static frontend pages and created backend server using Node and ExpressJS along with Nodemailer to send a mail to my E-mail Account when someone fills the contact form",
       stack: "REACTJS | NODEJS | EXPRESS | NODEMAILER",
@@ -48,7 +47,7 @@ const Projects = () => {
       github: "https://github.com/jarihant701/rock-paper-scissor",
       live: "https://jarihant701.github.io/rock-paper-scissor/",
       description:
-        "Rock Paper Scissors game between User and AI. User can select one of the 3 choices of Rock, Paper or Scissorsand computer will also generate its answer and generates a score",
+        "Rock Paper Scissors game between User and AI. User can select one of the 3 choices of Rock, Paper or Scissors and computer will also generate its own answer and generates a score",
       stack: "JAVASCRIPT",
     },
   ];
@@ -58,7 +57,7 @@ const Projects = () => {
       <h2 className="projects_title">&#60; Projects /&#62;</h2>
       {projects.map((project, index) => {
         return (
-          <ScrollAnimation animateIn="fadeIn" className="project" key={index}>
+          <div className="project">
             <div className="ss_div">
               <picture>
                 <source srcSet={project.imageWeb} type="image/webp" />
@@ -91,7 +90,7 @@ const Projects = () => {
               <p className="stack">{project.stack}</p>
             </div>
             {/* </div> */}
-          </ScrollAnimation>
+          </div>
         );
       })}
       <a

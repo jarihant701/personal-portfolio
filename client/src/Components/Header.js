@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Scrollspy from "react-scrollspy";
 
 const Header = () => {
   const [toggle, setToggle] = useState("");
@@ -17,12 +16,13 @@ const Header = () => {
         <div className="line"></div>
       </div>
       <nav className={`${toggle}`}>
-        <Scrollspy
+        {/* <Scrollspy
           items={["home", "about", "projects", "contact"]}
           currentClassName="is-current"
           className="nav-links"
           offset={-100}
-        >
+        > */}
+        <ul className="nav-links">
           <li>
             <a href="#home">Home</a>
           </li>
@@ -35,7 +35,8 @@ const Header = () => {
           <li>
             <a href="#contact">Contact</a>
           </li>
-        </Scrollspy>
+          </ul>
+        {/* </Scrollspy> */}
         <div className="nav-social">
           <a
             href="https://github.com/jarihant701"

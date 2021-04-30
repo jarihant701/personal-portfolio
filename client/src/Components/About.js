@@ -35,13 +35,22 @@ const About = () => {
           <h3 className="skill_title">Skills</h3>
           {skills.map((skill, index) => {
             return (
-              <span className="skill_span" key={index} style={{ color: skill.skill[2] }}>
+              <span
+                className="skill_span"
+                key={index}
+                style={{ color: skill.skill[2] }}
+              >
                 <i className={`fab ${skill.skill[0]}`}></i> {skill.skill[1]}
               </span>
             );
           })}
         </div>
-        <a href="#about" className="btn">
+        <a
+          href="https://drive.google.com/file/d/1-9dZvtEHgbQDoruJ9A7DPmePkdzFbINc/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn"
+        >
           View Resume
         </a>
       </div>

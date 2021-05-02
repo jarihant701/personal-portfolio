@@ -46,7 +46,7 @@ const About = () => {
           })}
         </div>
         <a
-          href="https://drive.google.com/file/d/1-9dZvtEHgbQDoruJ9A7DPmePkdzFbINc/view?usp=sharing"
+          href="https://drive.google.com/file/d/1r3GO_JbS_HTXFuQbyY55E2hBnfDtmFbB/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className="btn"

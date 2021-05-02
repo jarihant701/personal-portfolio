@@ -15,7 +15,7 @@ const Projects = () => {
       image: Portfolio,
       name: "Personal Website",
       github: "https://github.com/jarihant701/personal-portfolio",
-      live: "www.arihantjain.tech",
+      live: "https://www.arihantjain.tech",
       description:
         "Full Stack Node and React App to use as a Personal Portfolio. Used ReactJS to create static frontend pages and created backend server using Node and ExpressJS along with Nodemailer to send a mail to my E-mail Account when someone fills the contact form",
       stack: "REACTJS | NODEJS | EXPRESS | NODEMAILER",

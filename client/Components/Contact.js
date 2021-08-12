@@ -1,20 +1,20 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const Contact = () => {
   const [form, setForm] = useState({
-    name: "",
-    email: "",
-    desc: "",
-    captcha: "",
+    name: '',
+    email: '',
+    desc: '',
+    captcha: '',
   });
 
   const [error, setError] = useState({
-    name: "",
-    email: "",
-    desc: "",
+    name: '',
+    email: '',
+    desc: '',
   });
 
-  const [success, setSuccess] = useState("");
+  const [success, setSuccess] = useState('');
 
   const handleInput = (e) => {
     const name = e.target.name;
@@ -22,10 +22,10 @@ const Contact = () => {
     setError((prev) => {
       return {
         ...prev,
-        [name]: "",
+        [name]: '',
       };
     });
-    setSuccess("");
+    setSuccess('');
     setForm((prev) => {
       return {
         ...prev,
@@ -45,21 +45,21 @@ const Contact = () => {
     if (captcha.length > 0) return;
     if (name.length === 0 || email.length === 0 || desc.length === 0) {
       setError((prev) => {
-        return { ...prev, text: "All Fields are Compulsory" };
+        return { ...prev, text: 'All Fields are Compulsory' };
       });
       if (name.length === 0) {
         setError((prev) => {
-          return { ...prev, name: "error" };
+          return { ...prev, name: 'error' };
         });
       }
       if (email.length === 0 || validateEmail(email)) {
         setError((prev) => {
-          return { ...prev, email: "error" };
+          return { ...prev, email: 'error' };
         });
       }
       if (desc.length === 0) {
         setError((prev) => {
-          return { ...prev, desc: "error" };
+          return { ...prev, desc: 'error' };
         });
       }
       return;
@@ -67,7 +67,7 @@ const Contact = () => {
 
     if (!validateEmail(email)) {
       setError((prev) => {
-        return { ...prev, email: "error" };
+        return { ...prev, email: 'error' };
       });
       return;
     }
@@ -79,44 +79,44 @@ const Contact = () => {
     };
 
     const options = {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
     };
 
-    fetch("/email", options)
+    fetch('/email', options)
       .then((res) => res.json())
       .then((json) => {
         setSuccess(json.message);
         setForm({
-          name: "",
-          email: "",
-          desc: "",
-          captcha: "",
+          name: '',
+          email: '',
+          desc: '',
+          captcha: '',
         });
       })
       .catch((error) => setSuccess(error.message));
   };
 
   return (
-    <section id="contact" className="contact">
-      <h2 className="contact_title">Let's Work Together</h2>
-      <p className="contact_para">
+    <section id='contact' className='contact'>
+      <h2 className='contact_title'>Let&apos;s Work Together</h2>
+      <p className='contact_para'>
         Have Something in Mind?
         <br />
-        Let's Discuss
+        Let&apos;s Discuss
       </p>
       <form>
         <div>
-          <label htmlFor="name" className="label">
+          <label htmlFor='name' className='label'>
             NAME <br />
           </label>
           <input
-            type="text"
-            name="name"
-            id="name"
+            type='text'
+            name='name'
+            id='name'
             className={error.name}
             value={form.name}
             onChange={handleInput}
@@ -124,26 +124,26 @@ const Contact = () => {
           />
         </div>
         <div>
-          <label htmlFor="email" className="label">
+          <label htmlFor='email' className='label'>
             EMAIL <br />
           </label>
           <input
-            type="email"
-            name="email"
-            id="email"
+            type='email'
+            name='email'
+            id='email'
             className={error.email}
             value={form.email}
             onChange={handleInput}
             required
           />
         </div>
-        <div className="textarea">
-          <label htmlFor="desc">HOW CAN I HELP</label>
+        <div className='textarea'>
+          <label htmlFor='desc'>HOW CAN I HELP</label>
           <textarea
-            name="desc"
-            id="desc"
-            cols=""
-            rows="10"
+            name='desc'
+            id='desc'
+            cols=''
+            rows='10'
             className={error.desc}
             value={form.desc}
             onChange={handleInput}
@@ -151,42 +151,42 @@ const Contact = () => {
           ></textarea>
         </div>
         <input
-          type="text"
-          name="captcha"
-          id="captcha"
+          type='text'
+          name='captcha'
+          id='captcha'
           value={form.captcha}
           onChange={handleInput}
         />
-        <input type="submit" value="SUBMIT" id="submit" onClick={submitForm} />
+        <input type='submit' value='SUBMIT' id='submit' onClick={submitForm} />
       </form>
-      <p className="success">{success}</p>
-      <div className="contact-social">
+      <p className='success'>{success}</p>
+      <div className='contact-social'>
         <a
-          href="https://github.com/jarihant701"
-          target="_blank"
-          rel="noreferrer"
-          title="Github"
-          className="contact-links"
+          href='https://github.com/jarihant701'
+          target='_blank'
+          rel='noreferrer'
+          title='Github'
+          className='contact-links'
         >
-          <i className="fab fa-github"></i>
+          <i className='fab fa-github'></i>
         </a>
         <a
-          href="https://www.linkedin.com/in/arihant-jain-862503190/"
-          target="_blank"
-          rel="noreferrer"
-          title="LinkedIn"
-          className="contact-links"
+          href='https://www.linkedin.com/in/arihant-jain-862503190/'
+          target='_blank'
+          rel='noreferrer'
+          title='LinkedIn'
+          className='contact-links'
         >
-          <i className="fab fa-linkedin"></i>
+          <i className='fab fa-linkedin'></i>
         </a>
         <a
-          href="mailto:jarihant701@gmail.com"
-          className="contact-links"
-          target="_blank"
-          rel="noreferrer"
-          title="Email"
+          href='mailto:jarihant701@gmail.com'
+          className='contact-links'
+          target='_blank'
+          rel='noreferrer'
+          title='Email'
         >
-          <i className="fas fa-envelope"></i>
+          <i className='fas fa-envelope'></i>
         </a>
       </div>
     </section>

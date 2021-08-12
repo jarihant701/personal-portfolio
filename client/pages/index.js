@@ -22,7 +22,7 @@ const App = () => {
         <title>Arihant Jain | MERN Developer</title>
         <script
           src='https://kit.fontawesome.com/bfca5621f8.js'
-          crossorigin='anonymous'
+          crossOrigin='anonymous'
           defer
         ></script>
       </Head>
